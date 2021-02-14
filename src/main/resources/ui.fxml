@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.ListView?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="1049.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.strzelecki.ratingapp.UiController">
+   <left>
+      <VBox prefHeight="400.0" prefWidth="181.0" style="-fx-background-color: #6666ff#6666ff;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="42.0" prefWidth="171.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="8.0" text="Filtry">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="168.0" prefWidth="158.0">
+               <children>
+                  <ScrollPane hbarPolicy="NEVER" layoutX="3.0" layoutY="14.0" prefHeight="142.0" prefWidth="168.0" style="-fx-background-color: #ccccff#ccccff;">
+                    <content>
+                        <ListView fx:id="listView" layoutX="17.0" layoutY="81.0" prefHeight="345.0" prefWidth="521.0" />
+                    </content>
+                  </ScrollPane>
+               </children>
+            </Pane>
+            <Pane prefHeight="63.0" prefWidth="158.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="48.0" prefWidth="158.0" spacing="5.0">
+                     <children>
+                        <RadioButton mnemonicParsing="false" text="RadioButton" />
+                        <RadioButton mnemonicParsing="false" prefHeight="10.0" prefWidth="92.0" text="RadioButton" />
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <VBox alignment="TOP_CENTER" prefHeight="79.0" prefWidth="158.0" spacing="5.0">
+               <children>
+                  <Label text="Punkty" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Spinner prefHeight="27.0" prefWidth="63.0" />
+                        <Label text="do" />
+                        <Spinner prefHeight="27.0" prefWidth="63.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Pane prefHeight="161.0" prefWidth="181.0">
+               <children>
+                  <Button layoutX="27.0" layoutY="120.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Filtruj" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <TabPane prefHeight="400.0" prefWidth="552.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Untitled Tab 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pagination layoutX="14.0" layoutY="16.0" prefHeight="477.0" prefWidth="656.0" />
+                        <TableView layoutX="35.0" layoutY="31.0" prefHeight="398.0" prefWidth="592.0">
+                          <columns>
+                            <TableColumn prefWidth="216.0" text="C1" />
+                              <TableColumn prefWidth="75.0" text="C1" />
+                              <TableColumn prefWidth="75.0" text="C1" />
+                              <TableColumn prefWidth="75.0" text="C1" />
+                              <TableColumn prefWidth="75.0" text="C1" />
+                              <TableColumn prefWidth="75.0" text="C1" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <right>
+      <VBox prefHeight="532.0" prefWidth="201.0" style="-fx-background-color: #6600cc#6600cc;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="286.0" prefWidth="201.0">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="49.0" layoutY="57.0" prefHeight="33.0" prefWidth="104.0" text="Resurchify Tab" textFill="#f2e8e8">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TableView layoutX="21.0" layoutY="99.0" prefHeight="159.0" prefWidth="161.0">
+                    <columns>
+                      <TableColumn prefWidth="53.0" text="C1" />
+                        <TableColumn prefWidth="53.0" text="C1" />
+                        <TableColumn prefWidth="53.0" text="C1" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Separator prefWidth="200.0" />
+            <Pane prefHeight="64.0" prefWidth="201.0">
+               <children>
+                  <Label layoutX="45.0" layoutY="6.0" text="Wczytywanie Strony" textFill="#fcf9f9" />
+                  <ProgressBar layoutX="16.0" layoutY="29.0" prefHeight="20.0" prefWidth="169.0" progress="0.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="79.0" prefWidth="201.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="14.0" prefHeight="17.0" prefWidth="110.0" text="Zestaw Danych" textFill="#f2efef" />
+                  <ProgressIndicator layoutX="14.0" layoutY="14.0" progress="0.0" />
+                  <Button layoutX="61.0" layoutY="31.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="89.0" text="Zatrzymaj" />
+               </children>
+            </Pane>
+            <Pane prefHeight="92.0" prefWidth="201.0">
+               <children>
+                  <Button layoutX="35.0" layoutY="33.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="131.0" text="Koniec" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
