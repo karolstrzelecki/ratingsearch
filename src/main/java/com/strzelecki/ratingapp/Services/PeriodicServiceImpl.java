@@ -31,6 +31,24 @@ public class PeriodicServiceImpl implements PeriodicService{
 
 
     @Override
+    public List<PeriodicWithData> example() {
+
+        List<Periodic>periodics = periodicRepo.findAll();
+
+        List<PeriodicWithData> wrapped = periodics.stream().limit(2).map(x->{
+            PeriodicWithData periodicWithData = new PeriodicWithData();
+            periodicWithData.setTitle(x.getTitle());
+            periodicWithData.setHIndexSciMagor(getFromScimagor(x.getIssn()));
+            periodicWithData.setResurchifyData(getFromResurchify(x.getIssn()));
+            System.out.println(periodicWithData.getTitle() + periodicWithData.getHIndexSciMagor() );
+            System.out.println("Resurczifaj: " + periodicWithData.getResurchifyData());
+            return periodicWithData;
+        }).collect(Collectors.toList());
+
+        return wrapped;
+    }
+
+    @Override
     public List<Periodic> getByCategory(Set<Category> categories) {
 
         List<Periodic> periodicList = periodicRepo.findAllByCategoriesIn(categories).get();

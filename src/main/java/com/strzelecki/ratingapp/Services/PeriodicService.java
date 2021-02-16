@@ -16,4 +16,6 @@ public interface PeriodicService {
 
     List<PeriodicWithData> retrieved(List<Periodic> periodics);
 
+    List<PeriodicWithData>example();
+
 }
